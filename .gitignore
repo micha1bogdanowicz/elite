@@ -8,6 +8,7 @@ __pycache__/
 aa.py
 main.py
 
+
 # C extensions
 *.so
 
@@ -98,3 +99,4 @@ ENV/
 # Rope project settings
 .ropeproject
 
+.idea/workspace.xml

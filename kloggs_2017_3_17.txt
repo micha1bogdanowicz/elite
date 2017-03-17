@@ -1,0 +1,4 @@
+
+[*] PID: 5324 - pycharm.exe - elite - [C:\Users\alfa\PycharmProjects\elite] - ...\.gitignore - PyCharm 2016.3.2 [*]
+
+[*] PID: 5324 - pycharm.exe - elite - [C:\Users\alfa\PycharmProjects\elite] - ...\src\saver.py - PyCharm 2016.3.2 [*]

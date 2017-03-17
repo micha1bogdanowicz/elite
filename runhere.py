@@ -14,7 +14,8 @@ class Engine():
         self.k.keylogger()
 
 
-
+#gdy funkcji pojawi sie wiecej zostanie wprowadzony podzial na parametry
+#opt,args -> jak w netcat.py from BHpython repo
 if __name__=="__main__":
     eng=Engine()
     eng.main()
